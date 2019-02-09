@@ -1,0 +1,13 @@
+Package: dibu
+Title: Draw in the plane projections of solid figures
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Nicolás",
+           family = "San Martín",
+           role = c("aut", "cre"),
+           email = "smnicolas@gmail.com")
+Description: Draw in the plane projections of solid figures
+License: GPL-V3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
