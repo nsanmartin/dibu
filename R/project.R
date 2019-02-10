@@ -1,5 +1,5 @@
 #' @export
-orth.plane <- function(normal) {
+orth_plane <- function(normal = c(.1,.1,1)) {
     stopifnot(length(normal) == 3)
     v1 <- vector()
     v2 <- vector()
@@ -41,4 +41,14 @@ project.polyhedron <- function(data, plane) {
     data
 }
 
+#' @export
+project.solid <- function(data, plane) {
+    res <- list()
+    for (i in 1:nrow(data$offsets)) {
+        res[[i]] <-  t(apply(data$vertices, 1, function (x) {
+            project(x + data$offset[i,], plane)
+        }))
+    }
+    res
+}
 
