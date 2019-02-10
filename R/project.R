@@ -40,7 +40,7 @@ project.polyhedron <- function(data, plane) {
         project(x, plane)}))
     data
 }
-
+ 
 #' @export
 project.solid <- function(data, plane) {
     res <- list()
@@ -52,3 +52,12 @@ project.solid <- function(data, plane) {
     res
 }
 
+#' @export
+project.ensamble <- function(data, plane) {
+    res <- list()
+    for (s in data$solids) {
+        res <- append(res, list(project(s, plane)))
+    }
+    class(res) <- c("ensamble_list", class(res))
+    res
+}

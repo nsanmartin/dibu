@@ -26,7 +26,7 @@ rect_box <- function(x = .1, y = .1, z = .1) {
 }
 
 
-new.solid <- function(poly, offsets) {
+as.solid <- function(poly, offsets) {
     stopifnot("polyhedron" %in% class(poly))
     stopifnot(ncol(offset) == 3)
     poly$offsets <- offsets

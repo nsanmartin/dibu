@@ -1,6 +1,7 @@
 #' @export
-new.assemly <- function(solids) {
-    structue(list(solids = solids),
+ensamble <- function(solids) {
+    structure(list(solids = solids),
              class = "ensamble")
 }
+
 
